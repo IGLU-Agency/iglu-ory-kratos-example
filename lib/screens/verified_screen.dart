@@ -20,9 +20,10 @@ class _VerifiedScreenState extends State<VerifiedScreen> {
   void initState() {
     super.initState();
 
-    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance?.addPostFrameCallback((timeStamp) async {
+      final res = await global.handlers.initHandlersVerifyEmail(context);
       Future<dynamic>.delayed(const Duration(milliseconds: 400), () {
-        showCustomDialog(context: context);
+        if (res != null) showCustomDialog(context: context);
       });
     });
   }

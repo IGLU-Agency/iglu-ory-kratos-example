@@ -485,8 +485,8 @@ class Handlers {
         true) {
       await Nav.push(
         context,
-        screen: const VerifiedScreen(),
-        name: '/',
+        screen: const ProfileScreen(),
+        name: '/settings',
       );
       return null;
     }
