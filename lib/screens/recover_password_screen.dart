@@ -46,120 +46,128 @@ class RecoverPasswordScreenState extends State<RecoverPasswordScreen> {
         backgroundColor: Colors.white,
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Builder(
-            builder: (ctx) => Form(
-              key: _formKey,
-              child: SingleChildScrollView(
-                child: Align(
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 500,
-                    child: Stack(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 40),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: <Widget>[
-                                  const SizedBox(height: 30),
-                                  SizedBox(
-                                    height: 70,
-                                    width: 70,
-                                    child: Image.asset(
-                                      'assets/images/iglu_logo.png',
-                                    ),
-                                  ),
-                                  const SizedBox(height: 30),
-                                  Container(
-                                    padding: const EdgeInsets.only(
-                                      top: 30,
-                                      bottom: 30,
-                                      left: 30,
-                                      right: 30,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: primaryColor.withOpacity(0.1),
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        const Text(
-                                          'Recover password',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w900,
-                                            color: textColor,
-                                            fontSize: 28,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 30),
-                                        const Text(
-                                          'Enter your email address to receive the link to reset your password',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w200,
-                                            color: textSecondaryColor,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        const SizedBox(height: 30),
-                                        returnEmailTextFormField(),
-                                        const SizedBox(height: 30),
-                                        MElevatedButton(
-                                          title: 'Send',
-                                          onPressed: isSendButtonEnabled
-                                              ? _sendEmailActionAction
-                                              : null,
-                                          isLoading: isLoading,
-                                        ),
-                                        const SizedBox(height: 36),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 24 +
-                                        MediaQuery.of(context)
-                                            .viewPadding
-                                            .bottom,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 60, top: 20),
-                          child: Row(
+          child: Center(
+            child: Builder(
+              builder: (ctx) => Form(
+                key: _formKey,
+                child: SingleChildScrollView(
+                  child: Align(
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 500,
+                      child: Stack(
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              SizedBox(
-                                height: 40,
-                                width: 40,
-                                child: IconButton(
-                                  padding: EdgeInsets.zero,
-                                  onPressed: () => {
-                                    Nav.pushReplacement(
-                                      context,
-                                      screen: const LoginScreen(),
-                                      name: '/login',
-                                    )
-                                  },
-                                  icon: const Center(
-                                    child: Icon(
-                                      Icons.keyboard_backspace,
-                                      size: 30,
-                                      color: primaryColor,
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 40),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: <Widget>[
+                                    const SizedBox(height: 30),
+                                    SizedBox(
+                                      child: Image.asset(
+                                        'assets/images/ory+iglu_forgot.png',
+                                      ),
                                     ),
-                                  ),
+                                    const SizedBox(height: 30),
+                                    Container(
+                                      padding: const EdgeInsets.only(
+                                        top: 30,
+                                        bottom: 30,
+                                        left: 30,
+                                        right: 30,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        border: Border.all(
+                                          color: const Color.fromRGBO(
+                                            228,
+                                            230,
+                                            235,
+                                            1,
+                                          ),
+                                        ),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          const Text(
+                                            'Recover password',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w900,
+                                              color: textColor,
+                                              fontSize: 28,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 30),
+                                          const Text(
+                                            'Enter your email address to receive the link to reset your password',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w200,
+                                              color: textSecondaryColor,
+                                              fontSize: 16,
+                                            ),
+                                          ),
+                                          const SizedBox(height: 30),
+                                          returnEmailTextFormField(),
+                                          const SizedBox(height: 30),
+                                          MElevatedButton(
+                                            title: 'Send',
+                                            onPressed: isSendButtonEnabled
+                                                ? _sendEmailActionAction
+                                                : null,
+                                            isLoading: isLoading,
+                                          ),
+                                          const SizedBox(height: 36),
+                                          RichText(
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: 'Back to login',
+                                                  recognizer:
+                                                      TapGestureRecognizer()
+                                                        ..onTap = () {
+                                                          Nav.push(
+                                                            context,
+                                                            screen:
+                                                                const LoginScreen(),
+                                                            fullScreen: true,
+                                                            name: '/login',
+                                                          );
+                                                        },
+                                                  style: const TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    color: textColor,
+                                                    fontSize: 16,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            textAlign: TextAlign.center,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 130 +
+                                          MediaQuery.of(context)
+                                              .viewPadding
+                                              .bottom,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

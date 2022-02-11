@@ -51,79 +51,87 @@ class LoginScreenState extends State<LoginScreen> {
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Builder(
-            builder: (ctx) => Form(
-              key: _formKey,
-              child: SingleChildScrollView(
-                child: Align(
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 500,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 40),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: <Widget>[
-                              const SizedBox(height: 30),
-                              SizedBox(
-                                height: 70,
-                                width: 70,
-                                child: Image.asset(
-                                  'assets/images/iglu_logo.png',
+            builder: (ctx) => Center(
+              child: Form(
+                key: _formKey,
+                child: SingleChildScrollView(
+                  child: Align(
+                    child: Container(
+                      alignment: Alignment.center,
+                      width: 500,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 40),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: <Widget>[
+                                const SizedBox(height: 30),
+                                SizedBox(
+                                  child: Image.asset(
+                                    'assets/images/ory+iglu_login.png',
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 30),
-                              Container(
-                                padding: const EdgeInsets.only(
-                                  top: 30,
-                                  bottom: 30,
-                                  left: 30,
-                                  right: 30,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: primaryColor.withOpacity(0.1),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Column(
-                                  children: [
-                                    const Text(
-                                      'Login',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w900,
-                                        color: textColor,
-                                        fontSize: 28,
+                                const SizedBox(height: 30),
+                                Container(
+                                  padding: const EdgeInsets.only(
+                                    top: 30,
+                                    bottom: 30,
+                                    left: 30,
+                                    right: 30,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    border: Border.all(
+                                      color: const Color.fromRGBO(
+                                        228,
+                                        230,
+                                        235,
+                                        1,
                                       ),
                                     ),
-                                    const SizedBox(height: 30),
-                                    returnEmailTextFormField(),
-                                    const SizedBox(height: 24),
-                                    returnPasswordTextFormField(),
-                                    const SizedBox(height: 6),
-                                    returnForgotPasswordButton(),
-                                    const SizedBox(height: 30),
-                                    MElevatedButton(
-                                      title: 'LOGIN',
-                                      onPressed: isLoginButtonEnabled
-                                          ? _signInAction
-                                          : null,
-                                      isLoading: isLoading,
-                                    ),
-                                    const SizedBox(height: 36),
-                                    returnRegisterBorderButton(),
-                                  ],
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      const Text(
+                                        'Login',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w900,
+                                          color: textColor,
+                                          fontSize: 28,
+                                        ),
+                                      ),
+                                      const SizedBox(height: 30),
+                                      returnEmailTextFormField(),
+                                      const SizedBox(height: 24),
+                                      returnPasswordTextFormField(),
+                                      const SizedBox(height: 6),
+                                      returnForgotPasswordButton(),
+                                      const SizedBox(height: 30),
+                                      MElevatedButton(
+                                        title: 'LOGIN',
+                                        onPressed: isLoginButtonEnabled
+                                            ? _signInAction
+                                            : null,
+                                        isLoading: isLoading,
+                                      ),
+                                      const SizedBox(height: 36),
+                                      returnRegisterBorderButton(),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                height: 24 +
-                                    MediaQuery.of(context).viewPadding.bottom,
-                              ),
-                            ],
+                                SizedBox(
+                                  height: 130 +
+                                      MediaQuery.of(context).viewPadding.bottom,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

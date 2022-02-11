@@ -80,10 +80,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.white,
         body: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Builder(
-            builder: (ctx) => Form(
-              key: _formKey,
-              child: _returnProfileValuesSection(),
+          child: Center(
+            child: Builder(
+              builder: (ctx) => Form(
+                key: _formKey,
+                child: Builder(
+                  builder: (context) {
+                    return SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Container(
+                            constraints: const BoxConstraints(maxWidth: 500),
+                            child: Image.asset(
+                              'assets/images/ory+iglu_profile.png',
+                            ),
+                          ),
+                          _returnProfileValuesSection(),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              ),
             ),
           ),
         ),
@@ -96,10 +114,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: Container(
         width: 500,
         decoration: BoxDecoration(
-          color: primaryColor.withOpacity(0.1),
+          color: Colors.white,
+          border: Border.all(color: const Color.fromRGBO(228, 230, 235, 1)),
           borderRadius: BorderRadius.circular(12),
         ),
-        margin: const EdgeInsets.only(top: 30, bottom: 30),
+        margin: const EdgeInsets.only(bottom: 150),
         padding: const EdgeInsets.only(left: 24, right: 24),
         child: Scrollbar(
           controller: scrollController,
@@ -115,7 +134,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'Profile',
+                    'Settings',
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontWeight: FontWeight.w900,

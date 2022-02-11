@@ -28,20 +28,9 @@ class _ErrorScreenState extends State<ErrorScreen> {
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: SizedBox(
-                  height: 120,
-                  width: 140,
                   child: Image.asset(
-                    'assets/images/iglu_logo.png',
+                    'assets/images/ory+iglu_error.png',
                   ),
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'OOOPS! An error occurred.',
-                style: TextStyle(
-                  color: textColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 20),
@@ -51,7 +40,7 @@ class _ErrorScreenState extends State<ErrorScreen> {
                   Nav.pushReplacement(
                     context,
                     screen: const LoadingScreen(),
-                    name: '/',
+                    name: '/login',
                   );
                 },
               ),
