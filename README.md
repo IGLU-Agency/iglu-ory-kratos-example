@@ -4,7 +4,7 @@
 
 This example project shows how to integrate all the self-services flows of [Ory Kratos](https://www.ory.sh/kratos) within a custom interface developed with Flutter.
 
-All the details of this example are available in this article.
+All the details of this example are available in this [article](https://www.ory.sh/login-flutter-authentication-example-api-open-source/).
 
 ## Setup
 
