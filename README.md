@@ -18,6 +18,4 @@ After that, you'll have to run the project on chrome and test how it works.
 
 ## Real World
 
-If you are interested in seeing an actual project based on this, we invite you to look at our [unique solution](https://orykratos.iglu.dev/) that offers Ory Kratos.
-
 If you need a plug-and-play containerized solution, leave us an [email](mailto:info@iglu.dev).
